@@ -1,8 +1,8 @@
 package died.lab01.problema02;
 
 public class Temperatura {
-	private Double grados;
-	private Escala escala;
+	public Double grados;
+	public Escala escala;
 	
 	public Temperatura() {
 		grados = 0d;
