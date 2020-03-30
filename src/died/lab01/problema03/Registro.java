@@ -26,8 +26,10 @@ public class Registro {
 		int i = 1;
 		System.out.println("TEMPERATURAS REGISTRADAS EN: "+ ciudad);
 		for(Temperatura unaTemp : historico) {
-			System.out.println(i +"- "+ unaTemp.toString());
-			i++;
+			if(unaTemp != null) {
+				System.out.println(i +"- "+ unaTemp.toString());
+				i++;
+			}
 		}
 	}
 	
