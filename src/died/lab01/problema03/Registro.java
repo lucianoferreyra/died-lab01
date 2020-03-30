@@ -78,18 +78,29 @@ public class Registro {
 	}
 	
 	private int obtenerIndice() {
-		int cont = 0, indice = 0;;
+		int indice = 0, i=0;
 		Double mayor = 0d;
 		
+		Double aux[] = new Double[MAX];
+		
+		
 		for(Temperatura unaTemp : historico) {
-			if(unaTemp.grados > mayor) {
-				mayor = unaTemp.grados;
-				indice = cont;
+			if(unaTemp.escala.equals(Escala.FAHRENHEIT)) {
+				aux[i] = unaTemp.asCelcius();
+				i++;
+			}else {
+				aux[i] = unaTemp.grados;
+				i++;
 			}
-			cont ++;
+		}
+		
+		for(int j=0; j<MAX; j++) {
+			if(aux[j]>mayor) {
+				mayor = aux[j];
+				indice = j;
+			}
 		}
 		return indice;
-
 	}
 	
 }
